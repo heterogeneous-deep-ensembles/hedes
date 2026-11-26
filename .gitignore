@@ -1,0 +1,9 @@
+# Local Python environments
+ghpage/
+.venv/
+
+# Paper PDF (linked from arXiv instead)
+*.pdf
+!static/pdfs/*.pdf
+
+.DS_Store
