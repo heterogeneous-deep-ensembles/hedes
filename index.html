@@ -3,306 +3,193 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles - Ilya Burenko, Dmitry Vetrov">
+  <meta name="description" content="Deep ensembles of independently trained unimodal networks classify multimodal data without any explicit fusion and outperform imbalance-aware late-fusion methods at equal parameter count. NeurIPS 2026.">
+  <meta name="keywords" content="multimodal learning, multimodal classification, deep ensembles, heterogeneous deep ensembles, modality imbalance, late fusion, scaling laws, NeurIPS 2026">
+  <meta name="author" content="Ilya Burenko, Dmitry Vetrov">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:site_name" content="Heterogeneous Deep Ensembles">
+  <meta property="og:title" content="Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles">
+  <meta property="og:description" content="Deep ensembles of independently trained unimodal networks classify multimodal data without any explicit fusion and outperform imbalance-aware late-fusion methods at equal parameter count. NeurIPS 2026.">
+  <meta property="og:url" content="https://heterogeneous-deep-ensembles.github.io/hedes/">
+  <meta property="og:image" content="https://heterogeneous-deep-ensembles.github.io/hedes/static/images/fig1_motivation.png">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="480">
+  <meta property="og:image:alt" content="Test accuracy of heterogeneous deep ensembles vs. late fusion across modality imbalance levels">
+  <meta property="article:published_time" content="2026-07-01T00:00:00.000Z">
+  <meta property="article:author" content="Ilya Burenko">
+  <meta property="article:author" content="Dmitry Vetrov">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="multimodal learning">
+  <meta property="article:tag" content="deep ensembles">
+  <meta property="article:tag" content="modality imbalance">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles">
+  <meta name="twitter:description" content="Deep ensembles of unimodal networks beat imbalance-aware late-fusion methods at equal parameter count — no fusion required. NeurIPS 2026.">
+  <meta name="twitter:image" content="https://heterogeneous-deep-ensembles.github.io/hedes/static/images/fig1_motivation.png">
+  <meta name="twitter:image:alt" content="Test accuracy of heterogeneous deep ensembles vs. late fusion across modality imbalance levels">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
+  <meta name="citation_title" content="Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles">
+  <meta name="citation_author" content="Burenko, Ilya">
+  <meta name="citation_author_institution" content="ScaDS.AI, Technische Universität Dresden">
+  <meta name="citation_author" content="Vetrov, Dmitry">
+  <meta name="citation_author_institution" content="Constructor University">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems (NeurIPS 2026)">
+  <meta name="citation_arxiv_id" content="2607.05019">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2607.05019">
+
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <title>Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles | NeurIPS 2026</title>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+  <!-- MathJax for equations -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+
+  <!-- Scripts -->
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles",
+    "description": "Deep ensembles of independently trained unimodal networks classify multimodal data without any explicit fusion and outperform imbalance-aware late-fusion methods at equal parameter count.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Ilya Burenko",
+        "email": "ilia.burenko@tu-dresden.de",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "ScaDS.AI, Technische Universität Dresden"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Dmitry Vetrov",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Constructor University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2026",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "Conference on Neural Information Processing Systems (NeurIPS)"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "url": "https://heterogeneous-deep-ensembles.github.io/hedes/",
+    "sameAs": "https://arxiv.org/abs/2607.05019",
+    "image": "https://heterogeneous-deep-ensembles.github.io/hedes/static/images/fig1_motivation.png",
+    "keywords": ["multimodal learning", "deep ensembles", "modality imbalance", "late fusion", "scaling laws"],
+    "abstract": "In multimodal classification, late-fusion approaches classify concatenated modality-specific features extracted by unimodal neural networks. When modality imbalance is pronounced, various regularization techniques have been proposed to balance the learning process and overcome the inferior performance of late-fusion networks. In contrast, this work demonstrates that multimodal data can be effectively classified without any explicit modality fusion, using deep ensembles of unimodal networks. We systematically compare deep ensembles to late-fusion networks at equal parameter count and show that ensembles consistently outperform state-of-the-art late-fusion methods designed to address modality imbalance when trained from random initialization. This advantage also holds over intermediate-fusion techniques we evaluated and over hybrid methods that combine unimodal and multimodal classifiers. We propose and empirically validate a method for selecting the number of models per modality in an ensemble, avoiding computationally expensive exhaustive search. Under extreme modality imbalance and small ensemble sizes, the heuristic indicates that ensembles of unimodal models trained solely on the stronger modality are preferable. As the ensemble scales up, incorporating models from the weaker modality becomes beneficial. Both predictions align with our empirical findings. However, the heuristic becomes less reliable when the diversity of ensemble members is low. To systematically explore the challenges of optimizing multimodal models, we propose a synthetic multimodal framework that allows control over both the number of modalities and their predictive strength. Our findings are consistent across synthetic and real-world datasets. Finally, by fitting scaling laws to bimodal datasets, we estimate the asymptotic performance of ensembles.",
+    "isAccessibleForFree": true
   }
   </script>
 </head>
 <body>
-
 
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
+
+  <!-- Title / authors -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles</h1>
+
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+              <span class="author-block">Ilya Burenko<sup>1</sup>,</span>
+              <span class="author-block">Dmitry Vetrov<sup>2</sup></span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>1</sup>ScaDS.AI, Technische Universität Dresden, Germany</span>
+              <span class="author-block"><sup>2</sup>Constructor University, Bremen, Germany</span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+            <div class="publication-venue">NeurIPS 2026</div>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+            <div class="is-size-6 publication-contact">
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+              ilia.burenko@tu-dresden.de
+            </div>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2607.05019" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2607.05019" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <!-- TODO: replace href with the OpenReview / NeurIPS proceedings URL -->
+                <a href="#" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-alt"></i></span>
+                  <span>OpenReview</span>
                 </a>
               </span>
             </div>
@@ -310,167 +197,394 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="paper-figure teaser-figure">
+          <img src="static/images/fig1_motivation.png" alt="Test accuracy on bimodal synthetic CIFAR-100 as the weaker modality becomes stronger: HeDE(2) stays above naive late fusion at every imbalance level" loading="eager">
+        </figure>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          <strong>TL;DR:</strong> You do not need to fuse modalities to classify multimodal data. Averaging the logits of
+          unimodal networks trained <em>independently</em> on each modality outperforms late-fusion networks, including
+          methods built specifically for modality imbalance, at equal parameter count.
         </h2>
+        <p class="figure-caption has-text-centered">
+          Test accuracy on bimodal synthetic CIFAR-100 as the weaker modality's share of data grows from 5% to 50%
+          (stronger modality fixed at 50%). The heterogeneous ensemble HeDE(2) beats naive late fusion at every imbalance level.
+        </p>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+  </section>
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+  <!-- Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In multimodal classification, late-fusion approaches classify concatenated modality-specific features extracted
+              by unimodal neural networks. When modality imbalance is pronounced, various regularization techniques have been
+              proposed to balance the learning process and overcome the inferior performance of late-fusion networks.
+              In contrast, this work demonstrates that multimodal data can be effectively classified without any explicit
+              modality fusion, using deep ensembles of unimodal networks. We systematically compare deep ensembles to
+              late-fusion networks at equal parameter count and show that ensembles consistently outperform state-of-the-art
+              late-fusion methods designed to address modality imbalance when trained from random initialization. This
+              advantage also holds over intermediate-fusion techniques we evaluated and over hybrid methods that combine
+              unimodal and multimodal classifiers. We propose and empirically validate a method for selecting the number of
+              models per modality in an ensemble, avoiding computationally expensive exhaustive search. Under extreme modality
+              imbalance and small ensemble sizes, the heuristic indicates that ensembles of unimodal models trained solely on
+              the stronger modality are preferable. As the ensemble scales up, incorporating models from the weaker modality
+              becomes beneficial. Both predictions align with our empirical findings. However, the heuristic becomes less
+              reliable when the diversity of ensemble members is low. To systematically explore the challenges of optimizing
+              multimodal models, we propose a synthetic multimodal framework that allows control over both the number of
+              modalities and their predictive strength. Our findings are consistent across synthetic and real-world datasets.
+              Finally, by fitting scaling laws to bimodal datasets, we estimate the asymptotic performance of ensembles.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
+  </section>
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+  <!-- Contributions -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Key Contributions</h2>
+      <div class="content">
+        <ol class="contribution-list">
+          <li>
+            <strong>Ensembles beat fusion at equal parameter count.</strong> Deep ensembles consistently outperform
+            state-of-the-art late-fusion methods designed for modality imbalance (OGM-GE, MMPareto, AUG, InfoReg, ReconBoost, LFM),
+            intermediate-fusion networks (MMTM, cross-attention) for both CNNs and Transformers, and the hybrid I2M2.
+          </li>
+          <li>
+            <strong>A cheap allocation heuristic.</strong> A closed-form rule based on unimodal validation losses picks how many
+            networks to train per modality, avoiding exhaustive search. It predicts that homogeneous ensembles win at small sizes
+            under extreme imbalance and that heterogeneous ensembles take over as the ensemble grows.
+          </li>
+          <li>
+            <strong>A controllable synthetic multimodal benchmark.</strong> Built from real data, it controls the number of
+            modalities and their predictive strength and, unlike prior synthetic benchmarks, allows training overparameterized
+            networks, reproducing the optimization difficulties seen in practice.
+          </li>
+          <li>
+            <strong>Scaling laws for heterogeneous ensembles.</strong> Power laws fitted on synthetic and real bimodal data show
+            that unimodal test losses reliably predict the asymptotic test loss of the heterogeneous ensemble.
+          </li>
+        </ol>
       </div>
     </div>
   </section>
-<!--End paper poster -->
 
+  <!-- Method -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Heterogeneous Deep Ensembles</h2>
+      <div class="content has-text-justified">
+        <p>
+          We train \(n_m\) unimodal classifiers \(g^m_{k} = L^m_{k} \circ f^m_{k}\) on each modality \(m\), each from a different
+          random initialization and fully independently. A <strong>heterogeneous deep ensemble (HeDE)</strong> combines
+          networks trained on <em>different</em> modalities; a <strong>homogeneous deep ensemble (HoDE)</strong> uses a single
+          modality. Neither performs any form of modality fusion. For two modalities, the HeDE averages the
+          <em>logits</em> of all \(N_{\text{ens}} = n_1 + n_2\) members:
+        </p>
+        <div class="equation-block">
+          \[
+            h_{\text{ens}}(x^1, x^2) = \frac{1}{N_{\text{ens}}}\left(\sum_{k_1=1}^{n_1} g^1_{k_1}(x^1) + \sum_{k_2=1}^{n_2} g^2_{k_2}(x^2)\right).
+          \]
+        </div>
+        <p>
+          Averaging logits rather than probabilities is crucial: it improves accuracy and yields well-calibrated
+          predictions without post-hoc calibration. For a fair comparison, every ensemble is matched to a late-fusion network
+          with the <em>same</em> feature extractors, differing only in the classification head.
+        </p>
 
+        <h3 class="title is-4">How many networks per modality?</h3>
+        <p>
+          The cross-entropy validation loss \(l_i\) of a unimodal classifier on modality \(X_i\) estimates the conditional
+          entropy \(H(Y \mid X_i)\). We allocate networks in proportion to the inverse losses:
+        </p>
+        <div class="equation-block">
+          \[
+            n_i = \operatorname{round}\!\left(N_{\text{ens}}\,\frac{1/l_i}{\sum_j 1/l_j}\right),
+          \]
+        </div>
+        <p>
+          using the Largest Remainder Method so that counts sum to \(N_{\text{ens}}\) (ties broken by smaller \(l_i\)).
+          The heuristic needs only one trained model per modality and gives near-optimal allocations on synthetic and
+          real-world datasets.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<!--BibTex citation -->
+  <!-- Synthetic benchmark -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">A Controllable Synthetic Multimodal Benchmark</h2>
+      <div class="content has-text-justified">
+        <ul>
+          <li>
+            <strong>Class-aligned setup.</strong> Split a unimodal dataset (CIFAR-100, ImageNet-1K) into disjoint subsets of
+            sizes \(s_1, s_2\) and pair same-class samples to form multimodal inputs. Shrinking one subset makes that modality
+            weaker <em>and</em> faster to converge, reproducing the modality imbalance seen in real data. Splits are denoted
+            \((s_1/n,\ s_2/n)\), e.g. (0.05–0.95), and extend naturally to \(M &gt; 2\) modalities.
+          </li>
+          <li>
+            <strong>Instance-aligned setup.</strong> Build modalities from the same image via complementary frequency bands,
+            \((G_{\sigma_1}(x),\ x - G_{\sigma_2}(x))\), with Gaussian smoothing \(G_\sigma\). The bands overlap, match exactly,
+            or leave a gap depending on \(\sigma_1\) vs. \(\sigma_2\), giving each modality its own features.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results: synthetic -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results on Synthetic Data</h2>
+      <div class="columns is-variable is-4">
+        <div class="column">
+          <figure class="paper-figure">
+            <img src="static/images/fig2a_splits.png" alt="Accuracy of ensembles and late-fusion baselines on bimodal CIFAR-100 across data splits" loading="lazy">
+            <figcaption>(a) Bimodal CIFAR-100 across data splits (ensemble size 2).</figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="paper-figure">
+            <img src="static/images/fig2b_ens_size.png" alt="Accuracy versus ensemble size on the most imbalanced CIFAR-100 split" loading="lazy">
+            <figcaption>(b) Accuracy vs. ensemble size, most imbalanced split (0.05–0.95).</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Against AUG, InfoReg, MMPareto, OGM-GE and ReconBoost, HoDEs win only in the most imbalanced split (0.05–0.95);
+          HeDEs are best for every other split. As the ensemble grows, the advantage of HoDEs disappears: from size four onward,
+          <strong>HeDEs outperform HoDEs and all late-fusion methods</strong>, and the heuristic (gray “HeDE (estimate)”) catches
+          the switch from homogeneous to heterogeneous ensembles. The same pattern holds on ImageNet-1K, CREMA-D and Kinetics-400.
+        </p>
+      </div>
+
+      <div class="columns is-vcentered is-variable is-5 result-row">
+        <div class="column is-5">
+          <figure class="paper-figure">
+            <img src="static/images/fig3_trimodal.png" alt="Ternary plot of HeDE accuracy on trimodal ImageNet-1K for ensemble size 9" loading="lazy">
+            <figcaption>Trimodal ImageNet-1K (0.01–0.03–0.96), ensemble size 9. Red diamond: brute-force optimum; blue star: heuristic.</figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <div class="content has-text-justified">
+            <p>
+              <strong>Three modalities.</strong> Even under extreme imbalance, the optimal size-9 ensemble lies in the
+              <em>interior</em> of the ternary plot, so it uses models from every modality, and the heuristic lands right next to it.
+            </p>
+            <p>
+              <strong>Instance-aligned modalities.</strong> Ensembles beat the late-fusion baseline for all three
+              frequency-band configurations (Gap / Exact / Overlap).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results: real data -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results on Real-World Data</h2>
+      <div class="content has-text-justified">
+        <p>
+          We evaluate on CREMA-D (small, audio-visual), Sarcasm (small, text-visual), Kinetics-400 (large, audio-visual) and
+          CMU-MOSEI (medium, audio-text-visual). All baselines were reproduced from the authors' original code.
+        </p>
+      </div>
+
+      <h3 class="title is-4">CREMA-D: a leakage-free split</h3>
+      <div class="columns is-variable is-5">
+        <div class="column">
+          <div class="table-container">
+            <table class="table is-fullwidth is-narrow results-table">
+              <thead>
+                <tr><th>Method</th><th class="has-text-right">Accuracy (%)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Vanilla LF</td><td class="has-text-right">56.7 ± 1.6</td></tr>
+                <tr><td>OGM</td><td class="has-text-right">56.7 ± 1.4</td></tr>
+                <tr><td>LFM</td><td class="has-text-right">63.2 ± 1.7</td></tr>
+                <tr><td>AUG</td><td class="has-text-right">65.0 ± 1.6</td></tr>
+                <tr><td>InfoReg</td><td class="has-text-right">59.7 ± 1.1</td></tr>
+                <tr><td>MMPareto</td><td class="has-text-right">61.2 ± 0.8</td></tr>
+                <tr><td>ReconBoost</td><td class="has-text-right">61.7 ± 0.7</td></tr>
+                <tr><td>Audio HoDE</td><td class="has-text-right">58.2 ± 1.4</td></tr>
+                <tr><td>Video HoDE</td><td class="has-text-right">62.8 ± 1.5</td></tr>
+                <tr class="is-best"><td><strong>HeDE</strong></td><td class="has-text-right"><strong>71.1 ± 3.1</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="figure-caption">Mean accuracy and std. over 5 runs on the clean CREMA-D split.</p>
+        </div>
+        <div class="column">
+          <div class="content has-text-justified">
+            <p>
+              Many prior CREMA-D results use splits where the same actor appears in train and test, which lets models exploit
+              actor identity. On our actor-disjoint split, every baseline drops by <strong>6.7–16.9 points</strong>
+              (e.g. AUG 80.9 → 65.0, LFM 80.1 → 63.2).
+            </p>
+            <p>
+              On the clean split, a size-2 HeDE (one audio + one video network) reaches <strong>71.1%</strong>, which is
+              <strong>+6.1 points</strong> over the best late-fusion method, and the heuristic predicts the optimal allocation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="title is-4">Kinetics-400</h3>
+      <div class="columns is-variable is-4">
+        <div class="column">
+          <figure class="paper-figure">
+            <img src="static/images/fig5a_kinetics.png" alt="Kinetics-400 accuracy of HeDEs and HoDEs across ensemble sizes, and brute-force vs heuristic allocation discrepancy" loading="lazy">
+            <figcaption>(a) Top: HeDE vs. best HoDE accuracy across ensemble sizes. Bottom: |brute-force − heuristic| number of video networks.</figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="paper-figure">
+            <img src="static/images/fig5b_kinetics.png" alt="HeDE accuracy vs number of video networks for ensemble size 9 on Kinetics-400" loading="lazy">
+            <figcaption>(b) Ensemble size 9: accuracy vs. number of video networks. Red diamond: brute force; dashed: heuristic; dotted: vanilla LF.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Audio is much weaker than video on Kinetics-400. From ensemble size 4, HeDEs consistently outperform HoDEs, the same
+          scaling pattern as on synthetic data. The heuristic allocation stays within about one network of the brute-force optimum.
+          On <strong>Sarcasm</strong> (fine-tuned BERT-Base + ResNet-50), HeDEs match the best late-fusion methods at small sizes
+          and outperform all of them from ensemble size 6.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intermediate fusion & hybrids -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Beyond Late Fusion: Intermediate-Fusion and Hybrid Models</h2>
+      <div class="content has-text-justified">
+        <p>
+          Adding MMTM fusion blocks at progressively earlier layers gives at most marginal gains over vanilla late fusion.
+          The hybrid I2M2, which averages log-probabilities of unimodal and multimodal networks, also falls short of deep
+          ensembles at equal parameter count.
+        </p>
+      </div>
+      <div class="columns is-variable is-5">
+        <div class="column is-7">
+          <div class="table-container">
+            <table class="table is-fullwidth is-narrow results-table">
+              <thead>
+                <tr><th>Dataset</th><th>LF</th><th>MMTM-1</th><th>MMTM-2</th><th>HoDE(2)</th><th>HeDE(2)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>C-100 (0.05–0.95)</td><td>34.0</td><td>35.3</td><td>33.6</td><td><strong>78.5</strong></td><td>74.1</td></tr>
+                <tr><td>C-100 (0.5–0.5)</td><td>82.5</td><td>82.4</td><td>82.1</td><td>71.6</td><td><strong>86.9</strong></td></tr>
+                <tr><td>CREMA-D</td><td>56.7</td><td>58.7</td><td>58.9</td><td>62.8</td><td><strong>71.2</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="figure-caption">Accuracy (%) vs. intermediate fusion (MMTM-X: X fusion blocks). HoDE(2) is trained on the stronger modality.</p>
+        </div>
+        <div class="column">
+          <div class="table-container">
+            <table class="table is-fullwidth is-narrow results-table">
+              <thead>
+                <tr><th>Dataset</th><th>HeDE(4)</th><th>I2M2</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>CIFAR-100 (0.05–0.95)</td><td><strong>82.0</strong></td><td>74.9</td></tr>
+                <tr><td>CIFAR-100 (0.5–0.5)</td><td><strong>88.9</strong></td><td>87.9</td></tr>
+                <tr><td>ImageNet-1K (0.01–0.99)</td><td><strong>77.7</strong></td><td>62.4</td></tr>
+                <tr><td>ImageNet-1K (0.5–0.5)</td><td><strong>88.5</strong></td><td>88.0</td></tr>
+                <tr><td>CREMA-D</td><td><strong>75.3</strong></td><td>70.1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="figure-caption">Accuracy (%) vs. the hybrid I2M2 at equal parameter count.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scaling laws -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Scaling Laws</h2>
+      <div class="content has-text-justified">
+        <p>
+          For a fixed proportion of audio and video models, parameterized by an angle \(\theta \in [0, \pi/2]\), the test loss
+          of a HeDE follows a power law in the ensemble size \(N\):
+        </p>
+        <div class="equation-block">
+          \[
+            L_N(\theta) = L_\infty(\theta) + \frac{A(\theta)}{N^{\alpha(\theta)}}.
+          \]
+        </div>
+      </div>
+      <div class="columns is-variable is-4">
+        <div class="column">
+          <figure class="paper-figure">
+            <img src="static/images/fig6a_scaling.png" alt="Heatmap of HeDE test log-loss on CREMA-D over numbers of audio and video models" loading="lazy">
+            <figcaption>(a) Test log-loss of HeDEs on CREMA-D. Red: optimal proportion; green dashed: heuristic.</figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <figure class="paper-figure">
+            <img src="static/images/fig6b_scaling.png" alt="Asymptotic log-loss as a function of the proportion angle theta" loading="lazy">
+            <figcaption>(b) Asymptotic log-loss \(L_\infty(\theta)\) vs. \(\theta\). Red star: optimum; green diamond: heuristic.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          The power law fits well across all 24 bimodal CREMA-D configurations, and the heuristic recovers the optimal
+          proportion \(\theta_{\text{opt}} = \arg\min_\theta L_\infty(\theta)\). A linear regression from the unimodal log-losses
+          predicts \(\min_\theta L_\infty(\theta)\) with \(R^2 = 0.96\). <strong>Unimodal validation losses are therefore
+          enough to estimate both the composition and the expected performance of a heterogeneous ensemble</strong>
+          before training any ensemble.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Limitations -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Limitations &amp; Open Questions</h2>
+      <div class="content has-text-justified">
+        <ul>
+          <li>
+            <strong>Low-diversity ensembles.</strong> On binary CMU-MOSEI, deep ensembles fall short of naive late fusion,
+            and the heuristic misallocates models when the optimum favors one dominant modality. Late fusion still does not
+            beat the best possible ensemble.
+          </li>
+          <li>
+            <strong>Tasks that need joint reasoning.</strong> On Hateful Memes, where both modalities must be processed
+            together, late fusion outperforms deep ensembles.
+          </li>
+          <li>
+            <strong>Theory.</strong> The heuristic works well empirically, but its theoretical basis remains open, as does
+            whether a fusion architecture can be designed to match deep ensembles.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
@@ -480,41 +594,40 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@inproceedings{burenko2026fusionfree,
+  title     = {Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles},
+  author    = {Burenko, Ilya and Vetrov, Dmitry},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2607.05019}
 }</code></pre>
     </div>
-</section>
-<!--End BibTex citation -->
+  </section>
 
+  </main>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              <strong>Acknowledgements.</strong> I.B. acknowledges financial support by the Federal Ministry of Research,
+              Technology and Space of Germany and by the Sächsische Staatsministerium für Wissenschaft, Kultur und Tourismus
+              in the programme Center of Excellence for AI-research “Center for Scalable Data Analytics and Artificial
+              Intelligence Dresden/Leipzig” (ScaDS.AI). Computing time was provided by the NHR Center of TU Dresden.
+            </p>
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>
