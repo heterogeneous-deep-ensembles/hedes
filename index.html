@@ -69,7 +69,7 @@
 
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=20261127n">
+  <link rel="stylesheet" href="static/css/index.css?v=20261127u">
 
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -101,6 +101,10 @@
   <script defer src="static/js/class-aligned-anim.js?v=20261127"></script>
   <script defer src="static/js/allocation-explorer.js?v=20261127f"></script>
   <script defer src="static/js/mixture-explorer.js?v=20261127f"></script>
+  <script defer src="static/js/scaling-explorer.js?v=20261127"></script>
+  <script defer src="static/js/motivation-explorer.js?v=20261127b"></script>
+  <script defer src="static/js/cifar-explorer.js?v=20261127"></script>
+  <script defer src="static/js/k400-explorer.js?v=20261127b"></script>
 
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -240,7 +244,11 @@
   <!-- Teaser -->
   <section class="section teaser">
     <div class="container is-max-desktop">
-        <figure class="paper-figure teaser-figure">
+        <div class="motivation-explorer" id="motivation-explorer" data-src="static/data/motivation_cifar100.json">
+          <svg class="mo-plot" role="img" aria-label="Test accuracy of HeDE(2), naive late fusion, HoDE(2) and the unimodal networks on bimodal synthetic CIFAR-100 as the weaker modality becomes stronger"></svg>
+          <p class="mo-hint">Hover over the chart to compare HeDE(2) with naive late fusion at each split</p>
+        </div>
+        <figure class="paper-figure teaser-figure" id="motivation-fallback" hidden>
           <img src="static/images/fig1_motivation.png" alt="Test accuracy on bimodal synthetic CIFAR-100 as the weaker modality becomes stronger: HeDE(2) stays above naive late fusion at every imbalance level" loading="eager">
         </figure>
         <h2 class="subtitle has-text-centered">
@@ -420,6 +428,24 @@
   <section class="section hero is-light" id="results-synthetic">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Results on Synthetic Data</h2>
+      <!-- Interactive CIFAR-100 results (static/js/cifar-explorer.js); the carousel below is the fallback -->
+      <div class="mix-explorer" id="cifar-explorer" data-src="static/data/cifar100_methods.json">
+        <p class="mx-title">Synthetic CIFAR-100: ensembles vs. imbalance-aware late fusion</p>
+        <div class="cf-controls">
+          <div class="mx-knob" data-key="axis"><span class="mx-knob-label"><b>x-axis</b></span><div class="mx-seg" data-key="axis" role="group" aria-label="Quantity on the x-axis"></div></div>
+          <div class="mx-knob" data-key="size"><span class="mx-knob-label"><b>Ensemble size</b> (late-fusion networks)</span><div class="mx-seg" data-key="size" role="group" aria-label="Ensemble size"></div></div>
+          <div class="mx-knob" data-key="split"><span class="mx-knob-label"><b>Data split</b> (weaker&ndash;stronger)</span><div class="mx-seg" data-key="split" role="group" aria-label="Data split"></div></div>
+          <button class="mx-play" type="button" aria-label="Pause"></button>
+        </div>
+        <svg class="cf-plot" role="img" aria-label="Test accuracy of HeDE, HoDE and late-fusion methods on synthetic CIFAR-100"></svg>
+        <p class="cf-xtitle"></p>
+        <div class="cf-legend" role="group" aria-label="Show or hide methods"></div>
+        <p class="cf-legend-hint">Click a method to hide or show it &middot; hover over the chart for all values</p>
+        <p class="mx-cap">Mean accuracy &plusmn; std (bands). Ensemble size counts late-fusion networks; HeDE and HoDE of the same
+          size use twice as many unimodal networks, so all methods have equal parameter counts. Ensemble size 1 is Fig.&nbsp;2a of the
+          paper; split 0.05&ndash;0.95 against ensemble size is Fig.&nbsp;2b.</p>
+      </div>
+      <div id="cifar-explorer-fallback" hidden>
       <!-- CIFAR-100 results carousel (logic in static/js/index.js) -->
       <div class="simple-carousel" role="region" aria-roledescription="carousel" aria-label="Results on synthetic CIFAR-100" tabindex="0">
         <div class="carousel-viewport">
@@ -437,6 +463,7 @@
         <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
         <button class="carousel-arrow carousel-next" type="button" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
         <div class="carousel-dots"></div>
+      </div>
       </div>
       <div class="content has-text-justified">
         <p>
@@ -590,7 +617,22 @@
       </div>
 
       <h3 class="title is-4" id="kinetics">Kinetics-400</h3>
-      <div class="columns is-variable is-4">
+      <div class="mix-explorer" id="k400-explorer" data-src="static/data/k400_mixture.json">
+        <p class="mx-title">Kinetics-400: which mix of audio and video networks is best?</p>
+        <svg class="mx-plot" role="img" aria-label="Accuracy versus share of video networks on Kinetics-400"></svg>
+        <div class="k4-slider-row">
+          <button class="mx-play" type="button" aria-label="Pause"></button>
+          <div class="mx-slider-wrap">
+            <input class="mx-slider" type="range" min="0" step="1" aria-label="Ensemble size">
+            <div class="mx-ticks"></div>
+          </div>
+        </div>
+        <div class="mx-readout" aria-live="polite"></div>
+        <p class="mx-cap">Mean accuracy &plusmn; std (band) over 32 ensembles per mix, drawn from 10 audio and 10 video networks.
+          Faded lines: the other ensemble sizes (slider). Red diamond: best mix; blue star: allocation by Eq.&nbsp;(1); dashed line:
+          Eq.&nbsp;(1) before rounding; dotted line: a single vanilla late-fusion network. Hover over the chart to read off any point.</p>
+      </div>
+      <div class="columns is-variable is-4" id="k400-explorer-fallback" hidden>
         <div class="column">
           <figure class="paper-figure">
             <img src="static/images/fig5a_kinetics.png" alt="Kinetics-400 accuracy of HeDEs and HoDEs across ensemble sizes, and brute-force vs heuristic allocation discrepancy" loading="lazy">
@@ -678,7 +720,37 @@
           \]
         </div>
       </div>
-      <div class="columns is-variable is-4">
+      <div class="mix-explorer" id="scale-explorer" data-src="static/data/crema_scaling.json">
+        <p class="mx-title">CREMA-D: how the loss scales with the number of audio and video networks</p>
+        <div class="mx-knobs">
+          <div class="mx-knob"><span class="mx-knob-label"><b>Audio</b> &middot; training data</span><div class="mx-seg" data-key="audio" role="group" aria-label="Audio strength"></div></div>
+          <div class="mx-knob"><span class="mx-knob-label"><b>Video</b> &middot; training data, then input frames</span><div class="mx-seg" data-key="video" role="group" aria-label="Video strength"></div></div>
+        </div>
+        <div class="sl-plots">
+          <div><svg class="sl-heat" role="img" aria-label="Log test loss for every number of audio and video networks"></svg>
+            <p class="sl-sub"><b>(a) Log test loss of every HeDE</b><br>each ray from the origin is a fixed mix</p></div>
+          <div><svg class="sl-linf" role="img" aria-label="Log asymptotic loss of the fitted power law against the share of video networks"></svg>
+            <p class="sl-sub"><b>(b) Log asymptotic loss along each ray</b><br>dots: fitted power laws; hover for values</p></div>
+        </div>
+        <div class="sl-legend">
+          <span><i style="border-color:#0f172a"></i>your ray (slider snaps to the fitted rays)</span>
+          <span><i style="border-color:#dc2626"></i>optimal mix &#9670;</span>
+          <span><i style="border-color:#2563eb;border-top-style:dashed"></i>Eq.&nbsp;(1) &#9733;</span>
+        </div>
+        <div class="sl-row">
+          <button class="mx-play" type="button" aria-label="Pause"></button>
+          <div class="mx-slider-wrap sl-wrap">
+            <div class="sl-stops" aria-hidden="true"></div>
+            <input class="mx-slider sl-slider" type="range" min="0" max="1000" step="1" aria-label="Mixture factor of your ray">
+            <div class="sl-ticks"><span style="left:calc(var(--mx-thumb)/2)">0 &middot; audio only</span><span style="left:calc(var(--mx-thumb)/2 + (100% - var(--mx-thumb))*.5)">0.5</span><span style="left:calc(var(--mx-thumb)/2 + (100% - var(--mx-thumb)))">1 &middot; video only</span></div>
+          </div>
+        </div>
+        <div class="sl-readout" aria-live="polite"></div>
+        <p class="mx-cap">Test loss averaged over 32 random ensemble draws per cell. Along each ray the loss is fitted with
+          \(L_N = L_\infty + A\,N^{-\alpha}\); hover over (b) to see each fit's \(r^2\). The panel opens on the setting of
+          Fig.&nbsp;6 in the paper (audio 33%, video 100% with 2 frames). Video networks see 1 frame unless stated.</p>
+      </div>
+      <div class="columns is-variable is-4" id="scale-explorer-fallback" hidden>
         <div class="column">
           <figure class="paper-figure">
             <img src="static/images/fig6a_scaling.png" alt="Heatmap of HeDE test log-loss on CREMA-D over numbers of audio and video models" loading="lazy">
@@ -694,9 +766,12 @@
       </div>
       <div class="content has-text-justified">
         <p>
-          The power law fits well across all 24 bimodal CREMA-D configurations, and the heuristic recovers the optimal
-          proportion \(\theta_{\text{opt}} = \arg\min_\theta L_\infty(\theta)\). A linear regression from the unimodal log-losses
-          predicts \(\min_\theta L_\infty(\theta)\) with \(R^2 = 0.96\). <strong>Unimodal validation losses are therefore
+          Across all 28 bimodal CREMA-D configurations in the panel above (4 audio &times; 7 video strengths), the power law
+          fits almost every ray well (\(r^2 \ge 0.8\) for 382 of 420 rays), and Eq.&nbsp;(1) lands close to the optimal
+          proportion \(\theta_{\text{opt}} = \arg\min_\theta L_\infty(\theta)\): the fitted ray nearest to its prediction has an
+          asymptotic loss only 0.8% above the optimum in the median configuration (at most 12%). In the paper, a linear
+          regression from the unimodal log-losses over the 24 configurations without 8-frame video predicts
+          \(\min_\theta L_\infty(\theta)\) with \(R^2 = 0.96\). <strong>Unimodal validation losses are therefore
           enough to estimate both the composition and the expected performance of a heterogeneous ensemble</strong>
           before training any ensemble.
         </p>

@@ -1,0 +1,2 @@
+method,n_models,acc,loss,n_audio_models,n_video_models,draws_per_allocation
+late_fusion,1,62.03,1.6451,10,10,32
