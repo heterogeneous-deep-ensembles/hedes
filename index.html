@@ -214,13 +214,6 @@
 
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2607.05019" target="_blank" rel="noopener"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
                 <a href="https://arxiv.org/abs/2607.05019" target="_blank" rel="noopener"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
@@ -314,7 +307,7 @@
           </li>
           <li>
             <strong>Scaling laws for heterogeneous ensembles.</strong> Power laws fitted on synthetic and real bimodal data show
-            that unimodal test losses reliably predict the asymptotic test loss of the heterogeneous ensemble.
+            that unimodal validation losses reliably predict the asymptotic test loss of the heterogeneous ensemble.
           </li>
         </ol>
       </div>
@@ -468,9 +461,9 @@
       <div class="content has-text-justified">
         <p>
           Against AUG, InfoReg, MMPareto, OGM-GE and ReconBoost, HoDEs win only in the most imbalanced split (0.05–0.95);
-          HeDEs are best for every other split. As the ensemble grows, the advantage of HoDEs disappears: from size four onward,
-          <strong>HeDEs outperform HoDEs and all late-fusion methods</strong>, and the heuristic (gray “HeDE (estimate)”) catches
-          the switch from homogeneous to heterogeneous ensembles. The same pattern holds on ImageNet-1K, CREMA-D and Kinetics-400.
+          HeDEs are best for every other split. As the ensemble grows, the advantage of HoDEs disappears: from ensemble size two
+          (four unimodal networks) onward, <strong>HeDEs outperform HoDEs and all late-fusion methods</strong>, and the heuristic
+          (gray dashed “HeDE (Eq. 1)”) catches the switch from homogeneous to heterogeneous ensembles. The same pattern holds on ImageNet-1K, CREMA-D and Kinetics-400.
         </p>
       </div>
 
@@ -479,7 +472,7 @@
           <strong>Three modalities.</strong> On trimodal ImageNet-1K, we train every possible ensemble of nine networks and
           compare it with the allocation chosen by Eq.&nbsp;(1). Pick a data split below: under moderate imbalance the best
           ensemble lies in the <em>interior</em> of the triangle, so it uses models from every modality, and the heuristic
-          lands on it or right next to it.
+          lands on it or within one or two networks of it.
         </p>
       </div>
 
@@ -584,8 +577,8 @@
           <strong>Which mix, and how many networks?</strong> The panel below starts from the setting of the table (all
           training data, one video frame) and shows accuracy against the share of video networks in the ensemble. Weaken or
           strengthen either modality, change the ensemble size, and choose which of the three to animate or scrub with the
-          slider. Heterogeneous mixes beat both homogeneous ends, and the allocation from Eq.&nbsp;(1) stays close to the
-          best mix.
+          slider. In almost every setting a heterogeneous mix beats both homogeneous ends (the exceptions are ensembles of two
+          networks under strong imbalance), and the allocation from Eq.&nbsp;(1) stays close to the best mix.
         </p>
       </div>
 
@@ -711,8 +704,8 @@
       <h2 class="title is-3">Scaling Laws</h2>
       <div class="content has-text-justified">
         <p>
-          For a fixed proportion of audio and video models, parameterized by an angle \(\theta \in [0, \pi/2]\), the test loss
-          of a HeDE follows a power law in the ensemble size \(N\):
+          For a fixed proportion of audio and video models, parameterized by the mixture factor \(\theta \in [0, 1]\) (the
+          share of video networks), the test loss of a HeDE follows a power law in the ensemble size \(N\):
         </p>
         <div class="equation-block">
           \[
@@ -760,7 +753,7 @@
         <div class="column">
           <figure class="paper-figure">
             <img src="static/images/fig6b_scaling.png" alt="Asymptotic log-loss as a function of the proportion angle theta" loading="lazy">
-            <figcaption>(b) Asymptotic log-loss \(L_\infty(\theta)\) vs. \(\theta\). Red star: optimum; green diamond: heuristic.</figcaption>
+            <figcaption>(b) Asymptotic log-loss \(L_\infty\) vs. the angle of the ray. Red star: optimum; green diamond: heuristic.</figcaption>
           </figure>
         </div>
       </div>
@@ -769,9 +762,9 @@
           Across all 28 bimodal CREMA-D configurations in the panel above (4 audio &times; 7 video strengths), the power law
           fits almost every ray well (\(r^2 \ge 0.8\) for 382 of 420 rays), and Eq.&nbsp;(1) lands close to the optimal
           proportion \(\theta_{\text{opt}} = \arg\min_\theta L_\infty(\theta)\): the fitted ray nearest to its prediction has an
-          asymptotic loss only 0.8% above the optimum in the median configuration (at most 12%). In the paper, a linear
-          regression from the unimodal log-losses over the 24 configurations without 8-frame video predicts
-          \(\min_\theta L_\infty(\theta)\) with \(R^2 = 0.96\). <strong>Unimodal validation losses are therefore
+          asymptotic loss only 0.8% above the optimum in the median configuration (at most 12%). A linear regression
+          from the unimodal log-losses predicts \(\min_\theta L_\infty(\theta)\) across all 28 configurations with
+          \(R^2 = 0.96\). <strong>Unimodal validation losses are therefore
           enough to estimate both the composition and the expected performance of a heterogeneous ensemble</strong>
           before training any ensemble.
         </p>
@@ -851,7 +844,7 @@
       <div class="content">
         <p>
           This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>
-          which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+          which was adapted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
           This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
           Commons Attribution-ShareAlike 4.0 International License</a>.
         </p>
