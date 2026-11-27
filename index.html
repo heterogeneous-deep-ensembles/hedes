@@ -40,7 +40,8 @@
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles">
   <meta name="citation_author" content="Burenko, Ilya">
-  <meta name="citation_author_institution" content="ScaDS.AI, Technische Universität Dresden">
+  <meta name="citation_author_institution" content="ScaDS.AI (Center for Scalable Data Analytics and Artificial Intelligence) Dresden/Leipzig">
+  <meta name="citation_author_institution" content="Technische Universität Dresden">
   <meta name="citation_author" content="Vetrov, Dmitry">
   <meta name="citation_author_institution" content="Constructor University">
   <meta name="citation_publication_date" content="2026">
@@ -62,12 +63,13 @@
   <title>Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles | NeurIPS 2026</title>
 
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg?v=20261127">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico?v=20261127" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="static/images/apple-touch-icon.png?v=20261127">
 
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/index.css?v=20261127n">
 
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -93,7 +95,12 @@
 
   <!-- Scripts -->
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/index.js"></script>
+  <script defer src="static/js/index.js?v=20261127c"></script>
+  <script defer src="static/js/anim-utils.js?v=20261127"></script>
+  <script defer src="static/js/synthetic-anim.js?v=20261127"></script>
+  <script defer src="static/js/class-aligned-anim.js?v=20261127"></script>
+  <script defer src="static/js/allocation-explorer.js?v=20261127f"></script>
+  <script defer src="static/js/mixture-explorer.js?v=20261127f"></script>
 
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -107,10 +114,16 @@
         "@type": "Person",
         "name": "Ilya Burenko",
         "email": "ilia.burenko@tu-dresden.de",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "ScaDS.AI, Technische Universität Dresden"
-        }
+        "affiliation": [
+          {
+            "@type": "Organization",
+            "name": "ScaDS.AI (Center for Scalable Data Analytics and Artificial Intelligence) Dresden/Leipzig"
+          },
+          {
+            "@type": "Organization",
+            "name": "Technische Universität Dresden"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -142,6 +155,29 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <!-- Table of contents (sidebar on wide screens, pop-up list on narrow ones; logic in static/js/index.js) -->
+  <nav class="toc" id="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ul>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#contributions">Key contributions</a></li>
+      <li><a href="#method">Method</a>
+        <ul><li><a href="#allocation">Networks per modality</a></li></ul></li>
+      <li><a href="#benchmark">Synthetic benchmark</a></li>
+      <li><a href="#results-synthetic">Results: synthetic</a></li>
+      <li><a href="#results-real">Results: real-world</a>
+        <ul><li><a href="#crema-d">CREMA-D</a></li><li><a href="#kinetics">Kinetics-400</a></li></ul></li>
+      <li><a href="#beyond-late-fusion">Beyond late fusion</a></li>
+      <li><a href="#scaling-laws">Scaling laws</a></li>
+      <li><a href="#limitations">Limitations</a></li>
+      <li><a href="#BibTeX">BibTeX</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ul>
+  </nav>
+  <button class="toc-toggle" id="toc-toggle" type="button" aria-controls="toc" aria-expanded="false">
+    <i class="fas fa-list-ul"></i><span>Contents</span>
+  </button>
+
   <main id="main-content">
 
   <!-- Title / authors -->
@@ -153,20 +189,23 @@
             <h1 class="title is-1 publication-title">Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles</h1>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Ilya Burenko<sup>1</sup>,</span>
-              <span class="author-block">Dmitry Vetrov<sup>2</sup></span>
+              <span class="author-block">Ilya Burenko<sup>1,2</sup>,</span>
+              <span class="author-block">Dmitry Vetrov<sup>3</sup></span>
             </div>
 
             <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>1</sup>ScaDS.AI, Technische Universität Dresden, Germany</span>
-              <span class="author-block"><sup>2</sup>Constructor University, Bremen, Germany</span>
+              <span class="author-block"><sup>1</sup>ScaDS.AI</span>
+              <span class="author-block"><sup>2</sup>Technische Universität Dresden, Germany</span>
+              <span class="author-block"><sup>3</sup>Constructor University, Bremen, Germany</span>
             </div>
 
             <div class="publication-venue">NeurIPS 2026</div>
 
             <div class="is-size-6 publication-contact">
-              <span class="icon"><i class="fas fa-envelope"></i></span>
-              ilia.burenko@tu-dresden.de
+              <a href="mailto:ilia.burenko@tu-dresden.de">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                ilia.burenko@tu-dresden.de
+              </a>
             </div>
 
             <div class="publication-links">
@@ -185,8 +224,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <!-- TODO: replace href with the OpenReview / NeurIPS proceedings URL -->
-                <a href="#" target="_blank" rel="noopener"
+                <a href="https://openreview.net/forum?id=8Im8HCejDY" target="_blank" rel="noopener"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-alt"></i></span>
                   <span>OpenReview</span>
@@ -200,9 +238,8 @@
   </section>
 
   <!-- Teaser -->
-  <section class="hero teaser">
+  <section class="section teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
         <figure class="paper-figure teaser-figure">
           <img src="static/images/fig1_motivation.png" alt="Test accuracy on bimodal synthetic CIFAR-100 as the weaker modality becomes stronger: HeDE(2) stays above naive late fusion at every imbalance level" loading="eager">
         </figure>
@@ -215,15 +252,12 @@
           Test accuracy on bimodal synthetic CIFAR-100 as the weaker modality's share of data grows from 5% to 50%
           (stronger modality fixed at 50%). The heterogeneous ensemble HeDE(2) beats naive late fusion at every imbalance level.
         </p>
-      </div>
     </div>
   </section>
 
   <!-- Abstract -->
-  <section class="section hero is-light">
+  <section class="section hero is-light" id="abstract">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
@@ -246,16 +280,14 @@
               Finally, by fitting scaling laws to bimodal datasets, we estimate the asymptotic performance of ensembles.
             </p>
           </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Contributions -->
-  <section class="section">
+  <section class="section" id="contributions">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Key Contributions</h2>
-      <div class="content">
+      <div class="content has-text-justified">
         <ol class="contribution-list">
           <li>
             <strong>Ensembles beat fusion at equal parameter count.</strong> Deep ensembles consistently outperform
@@ -282,7 +314,7 @@
   </section>
 
   <!-- Method -->
-  <section class="section hero is-light">
+  <section class="section hero is-light" id="method">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Heterogeneous Deep Ensembles</h2>
       <div class="content has-text-justified">
@@ -304,7 +336,7 @@
           with the <em>same</em> feature extractors, differing only in the classification head.
         </p>
 
-        <h3 class="title is-4">How many networks per modality?</h3>
+        <h3 class="title is-4" id="allocation">How many networks per modality?</h3>
         <p>
           The cross-entropy validation loss \(l_i\) of a unimodal classifier on modality \(X_i\) estimates the conditional
           entropy \(H(Y \mid X_i)\). We allocate networks in proportion to the inverse losses:
@@ -324,44 +356,87 @@
   </section>
 
   <!-- Synthetic benchmark -->
-  <section class="section">
+  <section class="section" id="benchmark">
     <div class="container is-max-desktop">
       <h2 class="title is-3">A Controllable Synthetic Multimodal Benchmark</h2>
       <div class="content has-text-justified">
-        <ul>
-          <li>
-            <strong>Class-aligned setup.</strong> Split a unimodal dataset (CIFAR-100, ImageNet-1K) into disjoint subsets of
-            sizes \(s_1, s_2\) and pair same-class samples to form multimodal inputs. Shrinking one subset makes that modality
-            weaker <em>and</em> faster to converge, reproducing the modality imbalance seen in real data. Splits are denoted
-            \((s_1/n,\ s_2/n)\), e.g. (0.05–0.95), and extend naturally to \(M &gt; 2\) modalities.
-          </li>
-          <li>
-            <strong>Instance-aligned setup.</strong> Build modalities from the same image via complementary frequency bands,
-            \((G_{\sigma_1}(x),\ x - G_{\sigma_2}(x))\), with Gaussian smoothing \(G_\sigma\). The bands overlap, match exactly,
-            or leave a gap depending on \(\sigma_1\) vs. \(\sigma_2\), giving each modality its own features.
-          </li>
-        </ul>
+        <p>
+          <strong>Class-aligned setup.</strong> Split a unimodal dataset (CIFAR-100, ImageNet-1K) into disjoint subsets of
+          sizes \(s_1, s_2\) and pair same-class samples to form multimodal inputs. Shrinking one subset makes that modality
+          weaker <em>and</em> faster to converge, reproducing the modality imbalance seen in real data. Splits are denoted
+          \((s_1/n,\ s_2/n)\), e.g. (0.05–0.95), and extend naturally to \(M &gt; 2\) modalities.
+        </p>
       </div>
+
+      <!-- Class-aligned construction animation (static/js/class-aligned-anim.js) -->
+      <figure class="paper-figure synthetic-anim-figure">
+        <canvas id="class-aligned-anim"
+                class="synthetic-canvas class-aligned-canvas"
+                role="img"
+                aria-label="Animation: for each class, the images are split into two non-overlapping pools; every image of the modality-1 pool is paired with an image of the same class from the smaller modality-2 pool, whose images are reused."
+                data-pool1="[0, 1, 2, 3]"
+                data-pool2="[4, 5]"
+                data-classes='[
+                  {"label":"axolotl","images":["static/images/synthetic/class-aligned/axolotl_1.jpg","static/images/synthetic/class-aligned/axolotl_2.jpg","static/images/synthetic/class-aligned/axolotl_3.jpg","static/images/synthetic/class-aligned/axolotl_4.jpg","static/images/synthetic/class-aligned/axolotl_5.jpg","static/images/synthetic/class-aligned/axolotl_6.jpg"]},
+                  {"label":"hornbill","images":["static/images/synthetic/class-aligned/hornbill_1.jpg","static/images/synthetic/class-aligned/hornbill_2.jpg","static/images/synthetic/class-aligned/hornbill_3.jpg","static/images/synthetic/class-aligned/hornbill_4.jpg","static/images/synthetic/class-aligned/hornbill_5.jpg","static/images/synthetic/class-aligned/hornbill_6.jpg"]},
+                  {"label":"jellyfish","images":["static/images/synthetic/class-aligned/jellyfish_1.jpg","static/images/synthetic/class-aligned/jellyfish_2.jpg","static/images/synthetic/class-aligned/jellyfish_3.jpg","static/images/synthetic/class-aligned/jellyfish_4.jpg","static/images/synthetic/class-aligned/jellyfish_5.jpg","static/images/synthetic/class-aligned/jellyfish_6.jpg"]},
+                  {"label":"dugong","images":["static/images/synthetic/class-aligned/dugong_1.jpg","static/images/synthetic/class-aligned/dugong_2.jpg","static/images/synthetic/class-aligned/dugong_3.jpg","static/images/synthetic/class-aligned/dugong_4.jpg","static/images/synthetic/class-aligned/dugong_5.jpg","static/images/synthetic/class-aligned/dugong_6.jpg"]}
+                ]'></canvas>
+        <figcaption>
+          Class-aligned construction on ImageNet: the images of each class are split into non-overlapping pools \(I_1\)
+          (here 4 images) and \(I_2\) (here 2). Each image \(x^1 \in I_1\) is paired with an image \(x^2 \in I_2\) of the same
+          class, cycling through \(I_2\) so its images are reused.
+        </figcaption>
+      </figure>
+
+      <div class="content has-text-justified">
+        <p>
+          <strong>Instance-aligned setup.</strong> Build modalities from the same image via complementary frequency bands,
+          \((G_{\sigma_1}(x),\ x - G_{\sigma_2}(x))\), with Gaussian smoothing \(G_\sigma\). The bands overlap, match exactly,
+          or leave a gap depending on \(\sigma_1\) vs. \(\sigma_2\), giving each modality its own features.
+        </p>
+      </div>
+
+      <!-- Instance-aligned construction animation (static/js/synthetic-anim.js) -->
+      <figure class="paper-figure synthetic-anim-figure">
+        <canvas id="synthetic-anim"
+                class="synthetic-canvas"
+                role="img"
+                aria-label="Animation: an ImageNet image is copied; one copy is Gaussian-blurred (low-pass), the other has its blur subtracted (high-pass); the pair forms one bimodal training sample."
+                data-sigma-low="6"
+                data-sigma-high="3"
+                data-gain="2"
+                data-images='[{"src":"static/images/synthetic/jellyfish.jpg","label":"jellyfish"},{"src":"static/images/synthetic/hornbill.jpg","label":"hornbill"},{"src":"static/images/synthetic/dugong.jpg","label":"dugong"},{"src":"static/images/synthetic/axolotl.jpg","label":"axolotl"}]'></canvas>
+        <figcaption>
+          Instance-aligned construction on ImageNet: each image \(x\) yields a low-pass modality \(G_{\sigma_1}(x)\) and a
+          high-pass modality \(x - G_{\sigma_2}(x)\) with the same label \(y\). The high-pass image is shown on a gray
+          background with its contrast doubled for visibility.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- Results: synthetic -->
-  <section class="section hero is-light">
+  <section class="section hero is-light" id="results-synthetic">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Results on Synthetic Data</h2>
-      <div class="columns is-variable is-4">
-        <div class="column">
-          <figure class="paper-figure">
-            <img src="static/images/fig2a_splits.png" alt="Accuracy of ensembles and late-fusion baselines on bimodal CIFAR-100 across data splits" loading="lazy">
-            <figcaption>(a) Bimodal CIFAR-100 across data splits (ensemble size 2).</figcaption>
-          </figure>
+      <!-- CIFAR-100 results carousel (logic in static/js/index.js) -->
+      <div class="simple-carousel" role="region" aria-roledescription="carousel" aria-label="Results on synthetic CIFAR-100" tabindex="0">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <figure class="paper-figure carousel-slide" aria-roledescription="slide" aria-label="1 of 2">
+              <img src="static/images/fig2a_splits.png" alt="Accuracy of ensembles and late-fusion baselines on bimodal CIFAR-100 across data splits">
+              <figcaption>(a) Bimodal CIFAR-100 across data splits (ensemble size 2).</figcaption>
+            </figure>
+            <figure class="paper-figure carousel-slide" aria-roledescription="slide" aria-label="2 of 2">
+              <img src="static/images/fig2b_ens_size.png" alt="Accuracy versus ensemble size on the most imbalanced CIFAR-100 split">
+              <figcaption>(b) Accuracy vs. ensemble size, most imbalanced split (0.05–0.95).</figcaption>
+            </figure>
+          </div>
         </div>
-        <div class="column">
-          <figure class="paper-figure">
-            <img src="static/images/fig2b_ens_size.png" alt="Accuracy versus ensemble size on the most imbalanced CIFAR-100 split" loading="lazy">
-            <figcaption>(b) Accuracy vs. ensemble size, most imbalanced split (0.05–0.95).</figcaption>
-          </figure>
-        </div>
+        <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-arrow carousel-next" type="button" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-dots"></div>
       </div>
       <div class="content has-text-justified">
         <p>
@@ -372,31 +447,63 @@
         </p>
       </div>
 
-      <div class="columns is-vcentered is-variable is-5 result-row">
-        <div class="column is-5">
-          <figure class="paper-figure">
-            <img src="static/images/fig3_trimodal.png" alt="Ternary plot of HeDE accuracy on trimodal ImageNet-1K for ensemble size 9" loading="lazy">
-            <figcaption>Trimodal ImageNet-1K (0.01–0.03–0.96), ensemble size 9. Red diamond: brute-force optimum; blue star: heuristic.</figcaption>
-          </figure>
-        </div>
-        <div class="column">
-          <div class="content has-text-justified">
-            <p>
-              <strong>Three modalities.</strong> Even under extreme imbalance, the optimal size-9 ensemble lies in the
-              <em>interior</em> of the ternary plot, so it uses models from every modality, and the heuristic lands right next to it.
-            </p>
-            <p>
-              <strong>Instance-aligned modalities.</strong> Ensembles beat the late-fusion baseline for all three
-              frequency-band configurations (Gap / Exact / Overlap).
-            </p>
+      <div class="content has-text-justified">
+        <p>
+          <strong>Three modalities.</strong> On trimodal ImageNet-1K, we train every possible ensemble of nine networks and
+          compare it with the allocation chosen by Eq.&nbsp;(1). Pick a data split below: under moderate imbalance the best
+          ensemble lies in the <em>interior</em> of the triangle, so it uses models from every modality, and the heuristic
+          lands on it or right next to it.
+        </p>
+      </div>
+
+      <div class="alloc-explorer" id="alloc-explorer" data-src="static/data/trimodal_imagenet_n9.json">
+        <p class="ae-title">Trimodal ImageNet-1K: allocating an ensemble of N&nbsp;=&nbsp;9 networks</p>
+        <div class="ae-top">
+          <div>
+            <svg id="ae-tern" viewBox="0 0 470 330" role="img" aria-label="Ternary plot of the accuracy of every allocation of 9 networks"></svg>
+            <p class="ae-cap">Ensemble accuracy for every way to split 9 networks (hover a point); corners are homogeneous ensembles.</p>
+          </div>
+          <div>
+            <svg id="ae-bars" viewBox="0 0 260 236" role="img" aria-label="Validation loss of each unimodal network"></svg>
+            <p class="ae-cap">Validation loss of each unimodal network</p>
+            <svg id="ae-cmp" viewBox="0 0 260 108" role="img" aria-label="Accuracy of the heuristic HeDE and of an ensemble of three late-fusion networks" style="margin-top:22px"></svg>
+            <p class="ae-cap">Accuracy, %. &Delta;: accuracy of the Eq.&nbsp;(1) allocation minus that of the best allocation (brute force).
+              Late fusion &times;3: ensemble of three late-fusion networks (nine encoders, the same parameter count as the HeDE).</p>
           </div>
         </div>
+        <div class="ae-alloc" id="ae-alloc" aria-live="polite"></div>
+        <div class="ae-kind" id="ae-kind"></div>
+        <div class="ae-chips" id="ae-chips"></div>
+        <div class="ae-presets">
+          <div class="ae-presets-label">
+            <button class="ae-play" id="ae-play" type="button" aria-label="Pause cycling through the splits"></button>
+            <span>Data split (s<sub>1</sub>, s<sub>2</sub>, s<sub>3</sub>)</span>
+          </div>
+          <div class="ae-presets-row" id="ae-presets"></div>
+        </div>
+      </div>
+      <figure class="paper-figure" id="alloc-explorer-fallback" hidden>
+        <img src="static/images/fig3_trimodal.png" alt="Ternary plot of HeDE accuracy on trimodal ImageNet-1K for ensemble size 9" loading="lazy">
+        <figcaption>Trimodal ImageNet-1K (0.01–0.03–0.96), ensemble size 9. Red diamond: brute-force optimum; blue star: heuristic.</figcaption>
+      </figure>
+      <noscript>
+        <figure class="paper-figure">
+          <img src="static/images/fig3_trimodal.png" alt="Ternary plot of HeDE accuracy on trimodal ImageNet-1K for ensemble size 9">
+          <figcaption>Trimodal ImageNet-1K (0.01–0.03–0.96), ensemble size 9. Red diamond: brute-force optimum; blue star: heuristic.</figcaption>
+        </figure>
+      </noscript>
+
+      <div class="content has-text-justified">
+        <p>
+          <strong>Instance-aligned modalities.</strong> Ensembles beat the late-fusion baseline for all three
+          frequency-band configurations (Gap / Exact / Overlap).
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Results: real data -->
-  <section class="section">
+  <section class="section" id="results-real">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Results on Real-World Data</h2>
       <div class="content has-text-justified">
@@ -406,7 +513,7 @@
         </p>
       </div>
 
-      <h3 class="title is-4">CREMA-D: a leakage-free split</h3>
+      <h3 class="title is-4" id="crema-d">CREMA-D: a leakage-free split</h3>
       <div class="columns is-variable is-5">
         <div class="column">
           <div class="table-container">
@@ -445,7 +552,44 @@
         </div>
       </div>
 
-      <h3 class="title is-4">Kinetics-400</h3>
+      <div class="content has-text-justified">
+        <p>
+          <strong>Which mix, and how many networks?</strong> The panel below starts from the setting of the table (all
+          training data, one video frame) and shows accuracy against the share of video networks in the ensemble. Weaken or
+          strengthen either modality, change the ensemble size, and choose which of the three to animate or scrub with the
+          slider. Heterogeneous mixes beat both homogeneous ends, and the allocation from Eq.&nbsp;(1) stays close to the
+          best mix.
+        </p>
+      </div>
+
+      <div class="mix-explorer" id="mix-explorer" data-src="static/data/crema_mixture.json">
+        <p class="mx-title">CREMA-D: which mix of audio and video networks is best?</p>
+        <div class="mx-knobs">
+          <div class="mx-knob" data-key="audio"><span class="mx-knob-label"><b>Audio</b> &middot; training data</span><div class="mx-seg" data-key="audio" role="group" aria-label="Audio strength"></div></div>
+          <div class="mx-knob" data-key="video"><span class="mx-knob-label"><b>Video</b> &middot; training data, then input frames</span><div class="mx-seg" data-key="video" role="group" aria-label="Video strength"></div></div>
+          <div class="mx-knob" data-key="size"><span class="mx-knob-label"><b>Ensemble size</b> N</span><div class="mx-seg" data-key="size" role="group" aria-label="Ensemble size"></div></div>
+        </div>
+        <svg class="mx-plot" role="img" aria-label="Accuracy versus share of video networks"></svg>
+        <div class="mx-controls">
+          <div class="mx-anim-row">
+            <span class="mx-knob-label">Animate</span>
+            <div class="mx-seg" data-key="anim" role="group" aria-label="Dimension to animate"></div>
+          </div>
+          <div class="mx-slider-row">
+            <button class="mx-play" type="button" aria-label="Pause"></button>
+            <div class="mx-slider-wrap">
+              <input class="mx-slider" type="range" min="0" step="1">
+              <div class="mx-ticks"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mx-readout" aria-live="polite"></div>
+        <p class="mx-cap">Mean accuracy &plusmn; std (band) over ensembles drawn from 32 audio and 32 video networks.
+          Faded lines: the other values of the animated knob. Red diamond: best mix; blue star: allocation by Eq.&nbsp;(1);
+          dashed line: Eq.&nbsp;(1) before rounding. Video networks see 1 frame unless stated. Hover over the chart to read off any point.</p>
+      </div>
+
+      <h3 class="title is-4" id="kinetics">Kinetics-400</h3>
       <div class="columns is-variable is-4">
         <div class="column">
           <figure class="paper-figure">
@@ -472,7 +616,7 @@
   </section>
 
   <!-- Intermediate fusion & hybrids -->
-  <section class="section hero is-light">
+  <section class="section hero is-light" id="beyond-late-fusion">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Beyond Late Fusion: Intermediate-Fusion and Hybrid Models</h2>
       <div class="content has-text-justified">
@@ -520,7 +664,7 @@
   </section>
 
   <!-- Scaling laws -->
-  <section class="section">
+  <section class="section" id="scaling-laws">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Scaling Laws</h2>
       <div class="content has-text-justified">
@@ -561,7 +705,7 @@
   </section>
 
   <!-- Limitations -->
-  <section class="section hero is-light">
+  <section class="section hero is-light" id="limitations">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Limitations &amp; Open Questions</h2>
       <div class="content has-text-justified">
@@ -594,37 +738,48 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@inproceedings{burenko2026fusionfree,
-  title     = {Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles},
+      <pre id="bibtex-code"><code>@inproceedings{burenko_2026_fusion_free_ensembles,
   author    = {Burenko, Ilya and Vetrov, Dmitry},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  title     = {Fusion-Free Multimodal Classification with Heterogeneous Deep Ensembles},
+  booktitle = {Advances in Neural Information Processing Systems 39 (NeurIPS 2026)},
   year      = {2026},
-  url       = {https://arxiv.org/abs/2607.05019}
+  note      = {To appear},
+  url       = {https://openreview.net/forum?id=8Im8HCejDY}
 }</code></pre>
+    </div>
+  </section>
+
+  <!-- Acknowledgements -->
+  <section class="section hero is-light" id="acknowledgements">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Acknowledgements</h2>
+      <div class="content has-text-justified">
+        <p>
+          I.B. thanks Maria Ponomareva for her support, and Alexander Binder, Lalith Manjunath, Callum Murphy-Barltrop,
+          Andrei Politov, and Martin Weigert for valuable discussions. I.B. acknowledges the financial support by the
+          Federal Ministry of Research, Technology and Space of Germany and by Sächsische Staatsministerium für
+          Wissenschaft, Kultur und Tourismus in the programme Center of Excellence for AI-research „Center for Scalable
+          Data Analytics and Artificial Intelligence Dresden/Leipzig“, project identification number: ScaDS.AI. The authors
+          gratefully acknowledge the computing time made available to them on the high-performance computer at the NHR
+          Center of TU Dresden. This center is jointly supported by the Federal Ministry of Research, Technology and Space
+          of Germany and the state governments participating in the NHR
+          (<a href="https://www.nhr-verein.de/unsere-partner" target="_blank" rel="noopener">www.nhr-verein.de/unsere-partner</a>).
+        </p>
+      </div>
     </div>
   </section>
 
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              <strong>Acknowledgements.</strong> I.B. acknowledges financial support by the Federal Ministry of Research,
-              Technology and Space of Germany and by the Sächsische Staatsministerium für Wissenschaft, Kultur und Tourismus
-              in the programme Center of Excellence for AI-research “Center for Scalable Data Analytics and Artificial
-              Intelligence Dresden/Leipzig” (ScaDS.AI). Computing time was provided by the NHR Center of TU Dresden.
-            </p>
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>
-              which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
-              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
-        </div>
+    <div class="container is-max-desktop">
+      <div class="content">
+        <p>
+          This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>
+          which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+          This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
       </div>
     </div>
   </footer>

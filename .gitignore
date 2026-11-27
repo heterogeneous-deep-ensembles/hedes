@@ -7,3 +7,10 @@ ghpage/
 !static/pdfs/*.pdf
 
 .DS_Store
+
+# Source images (the page uses the crops in static/images/synthetic/)
+/images/
+/n01632777/
+/n01829413/
+/n01910747/
+/n02074367/
